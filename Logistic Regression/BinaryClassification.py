@@ -1,8 +1,8 @@
 from sklearn.linear_model import LogisticRegression
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
-
 import pandas as pd
+import math
 
 df = pd.read_csv("F:\\Setups\\py-master\\py-master\\ML\\7_logistic_reg\\insurance_data.csv")
 # print(df)
@@ -50,3 +50,21 @@ def best_score(x,y):
 
 best_score(X,y)
 '''
+
+
+m = reg.coef_
+b = reg.intercept_
+
+'''
+Lets defined sigmoid function now and do the math with hand
+'''
+def sigmoid(x):
+    return 1/(1+math.exp(-x))
+
+def prediction_function(age):
+    z = m*age + b
+    y = sigmoid(z)
+    return y
+
+age = prediction_function(90)
+print("90 aged: {}".format(age))         # 0.99 is more than 0.5 which means person with 90 age will buy insurance
