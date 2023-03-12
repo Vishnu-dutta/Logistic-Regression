@@ -16,7 +16,7 @@ plt.gray()
 X_train, X_test, y_train, y_test = train_test_split = train_test_split(digits.data, digits.target, test_size=0.2)
 reg = LogisticRegression()
 reg.fit(X_train, y_train)
-print(reg.score(X_train, y_train))
+print(reg.score(X_test, y_test))
 
 # plt.imshow(digits.image[67])
 # print(digits.target[67])
