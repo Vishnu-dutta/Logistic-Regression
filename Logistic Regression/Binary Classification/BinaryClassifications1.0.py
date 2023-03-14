@@ -13,7 +13,7 @@ df = pd.read_csv("F:\\Setups\\py-master\\py-master\\ML\\7_logistic_reg\\Exercise
 le = LabelEncoder()
 ohe = ColumnTransformer([("one_hot_encoding", OneHotEncoder(), [2])], remainder='passthrough')
 
-df["salary"] = le.fit_transform(df["salary"])
+# df["salary"] = le.fit_transform(df["salary"])
 X = df[["satisfaction_level", "average_montly_hours", "salary", "promotion_last_5years" ]].values
 X = np.array(ohe.fit_transform(X), dtype='float')
 
